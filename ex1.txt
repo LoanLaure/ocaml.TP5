@@ -1,0 +1,27 @@
+Une base de données de films
+
+2. Les lignes 1 à 7 du fichier déclare le type movie qui est un
+produit nommé qui a comme paramètres l'id du film, son titre, son année etc.
+
+3. La ligne 9 déclare un type somme res qui est modélisé par un movie, 
+une valeur Invalid (true false ?) et un Eof.
+
+4. On a le type de la fonction input_movie : in_channel -> res
+
+5. load_movies  : in_channel -> 'b
+
+let in_c = open_in f in => on sait que open_in : string -> in_channel
+- Donc in_c : in_channel
+let rec loop in_c acc =
+- loop : in_channel -> list -> 'd
+match input_movie in_c
+- in_channel -> res
+Donc loop in_c cc : 
+- loop : in_channel -> res list -> rest list
+On peut déduire de la fonction close_in que c'est un boolén qui
+renvoie true si on a arrêter la lecture du fichier et false sinon
+
+On a finalement que le type de la fonction load_movies est:
+load_movies : string -> res list 
+
+6. La lign 43 initialise la variable movies avec une liste des films du fichier "movies.csv".
