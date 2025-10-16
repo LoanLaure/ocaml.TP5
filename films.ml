@@ -60,6 +60,15 @@ let max_id (l:movie list) : int =
   |_::_ -> 
     List.fold_left (fun acc m -> if acc > m.id then acc else m.id) 0 l
 
+    let average_runtime l =
+      let nb, r_total =
+      List.fold_left
+      (fun (n,r) m -> (n+1, r+m.runtime))
+      (0,0)
+      l
+    in 
+    r_total / nb
+
 
 let () =
 (* match movies with
